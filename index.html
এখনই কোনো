@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sirajganj Gappi Farm</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f5f8;font-family:Arial,sans-serif;color:#29243b}
+header{background:white;padding:13px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px #ddd}
+.logo{text-align:center;color:#6928a2;font-weight:bold;font-size:22px;padding:8px}
+.search{display:flex;gap:7px}
+.search input{width:100%;padding:13px;border:2px solid #ed3887;border-radius:12px;font-size:15px}
+.search button{background:#ed3887;color:white;border:0;border-radius:10px;padding:10px}
+.benefits{background:#381064;color:white;text-align:center;padding:14px 4px;font-size:13px;font-weight:bold}
+.categories{display:flex;overflow-x:auto;gap:15px;background:white;padding:17px 12px}
+.cat{min-width:70px;text-align:center;font-size:13px;cursor:pointer}
+.cat span{display:block;font-size:33px;margin-bottom:6px}
+.promo{margin:12px;border-radius:13px;padding:20px 10px;text-align:center;color:white;background:linear-gradient(110deg,#ff8c38,#ef368e,#6727b5)}
+.promo h2{margin:5px;font-size:23px}
+.promo button{background:#ffe34c;border:0;border-radius:7px;padding:10px 20px;font-weight:bold}
+.section{padding:12px}
+.banner{background:linear-gradient(120deg,#27094d,#7022a9,#ed3c8a);color:white;text-align:center;border-radius:13px;padding:22px 10px}
+.banner h2{font-size:25px;margin:8px}
+.banner p{font-size:15px}
+.heading{font-size:20px;font-weight:bold;margin:10px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 7px #ddd}
+.fish{height:145px;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#d9f8fa,#e8d5ff);font-size:70px}
+.info{padding:11px}
+.info h3{font-size:15px;margin:3px 0 10px}
+.price{font-size:16px;color:#e52c7b;font-weight:bold;margin-bottom:10px}
+.info p{font-size:12px;color:#777}
+.order{width:100%;background:linear-gradient(90deg,#702bb5,#ed3689);color:white;border:0;padding:11px;border-radius:7px;font-weight:bold}
+.offer{background:#fff0f7;border:1px solid #f6c1dc;text-align:center;padding:18px;border-radius:12px;color:#a52872}
+footer{background:#321052;color:white;text-align:center;padding:25px 10px 90px;margin-top:20px}
+.bottom{position:fixed;bottom:0;left:0;width:100%;display:flex;justify-content:space-around;background:white;padding:11px 3px;box-shadow:0 -2px 8px #ddd;z-index:20}
+.bottom a{text-decoration:none;color:#555;text-align:center;font-size:12px}
+.bottom span{display:block;font-size:22px;margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">🐠 SIRAJGANJ GAPPI FARM</div>
+<div class="search">
+<input id="search" placeholder="🔍 মাছের নাম লিখে খুঁজুন..." oninput="searchFish()">
+<button onclick="searchFish()">Search</button>
+</div>
+</header>
+
+<div class="benefits">
+🐟 সুন্দর মাছ | 🚚 কুরিয়ার ডেলিভারি | 💜 বিশ্বস্ত সেবা
+</div>
+
+<div class="categories">
+<div class="cat" onclick="category('গাপ্পি')"><span>🐠</span>গাপ্পি</div>
+<div class="cat" onclick="category('মলি')"><span>🐟</span>মলি</div>
+<div class="cat" onclick="category('টেট্রা')"><span>🐡</span>টেট্রা</div>
+<div class="cat" onclick="category('বেটা')"><span>🐠</span>বেটা</div>
+<div class="cat" onclick="category('কোবরা')"><span>🌈</span>কোবরা</div>
+<div class="cat" onclick="category('')"><span>🐬</span>সব মাছ</div>
+</div>
+
+<div class="promo">
+<h2>🎉 মাছ কিনুন পছন্দমতো!</h2>
+<p>Sirajganj Gappi Farm-এর নতুন মাছের সংগ্রহ</p>
+<button onclick="document.getElementById('products').scrollIntoView()">SHOP NOW</button>
+</div>
+
+<div class="section">
+<div class="banner">
+<h2>🐠 নতুন মাছ এসেছে!</h2>
+<p>রঙিন মাছ দিয়ে সাজিয়ে তুলুন আপনার অ্যাকুরিয়াম</p>
+<p>Sirajganj Gappi Farm</p>
+</div>
+</div>
+
+<div class="section" id="products">
+<div class="heading">🔥 জনপ্রিয় মাছ</div>
+<div class="grid">
+
+<div class="card">
+<div class="fish">🐠</div>
+<div class="info">
+<h3>পার্পেল মোজাইক গাপ্পি</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>সুন্দর রঙিন গাপ্পি মাছ</p>
+<button class="order" onclick="order('পার্পেল মোজাইক গাপ্পি')">অর্ডার করুন</button>
+</div>
+</div>
+
+<div class="card">
+<div class="fish">🐟</div>
+<div class="info">
+<h3>কোবরা গাপ্পি</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>আকর্ষণীয় গাপ্পি মাছ</p>
+<button class="order" onclick="order('কোবরা গাপ্পি')">অর্ডার করুন</button>
+</div>
+</div>
+
+<div class="card">
+<div class="fish">🐠</div>
+<div class="info">
+<h3>মিক্স মলি</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>বিভিন্ন রঙের মলি মাছ</p>
+<button class="order" onclick="order('মিক্স মলি')">অর্ডার করুন</button>
+</div>
+</div>
+
+<div class="card">
+<div class="fish">🐟</div>
+<div class="info">
+<h3>টেট্রা ফিশ</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>সুন্দর অ্যাকুরিয়াম মাছ</p>
+<button class="order" onclick="order('টেট্রা ফিশ')">অর্ডার করুন</button>
+</div>
+</div>
+
+<div class="card">
+<div class="fish">🐡</div>
+<div class="info">
+<h3>HM Halfmoon Betta</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>আকর্ষণীয় বেটা মাছ</p>
+<button class="order" onclick="order('HM Halfmoon Betta')">অর্ডার করুন</button>
+</div>
+</div>
+
+<div class="card">
+<div class="fish">🐠</div>
+<div class="info">
+<h3>মুনটেল মলি</h3>
+<div class="price">দাম জানতে যোগাযোগ</div>
+<p>রঙিন মলি মাছ</p>
+<button class="order" onclick="order('মুনটেল মলি')">অর্ডার করুন</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="offer">
+<h2>🎁 বিশেষ অফার</h2>
+<p>নতুন মাছ ও অফারের খবর জানতে যোগাযোগ করুন।</p>
+</div>
+</div>
+
+<footer>
+<h2>🐠 Sirajganj Gappi Farm</h2>
+<p>শালদাইড় • বেলকুচি • সিরাজগঞ্জ</p>
+<p>যোগাযোগ: 01308856125</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<div class="bottom">
+<a href="#"><span>🏠</span>Home</a>
+<a href="#products"><span>🐟</span>Products</a>
+<a href="https://wa.me/8801308856125"><span>🛒</span>Order</a>
+<a href="https://wa.me/8801308856125"><span>👤</span>Account</a>
+</div>
+
+<script>
+function order(name){
+let msg="আসসালামু আলাইকুম, আমি "+name+" কিনতে চাই। দাম ও ডেলিভারি চার্জ জানাবেন।";
+location.href="https://wa.me/8801308856125?text="+encodeURIComponent(msg);
+}
+function searchFish(){
+let q=document.getElementById('search').value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(q)?"block":"none";
+});
+}
+function category(name){
+document.getElementById('search').value=name;
+searchFish();
+document.getElementById('products').scrollIntoView();
+}
+</script>
+
+</body>
+</html>
